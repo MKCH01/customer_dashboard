@@ -1,11 +1,11 @@
 import React from "react";
 
 function CustomersTable(props) {
-  const { customers } = props;
+  const { customers, showDetails } = props;
   return (
     <div>
-      <table border="5" cellSpacing="0">
-        <thead>
+      <table className="table table-striped bg-light table-hover">
+        <thead className="bg-dark">
           <th>Name</th>
           <th>Phone</th>
           <th>Show</th>
@@ -16,7 +16,16 @@ function CustomersTable(props) {
               <tr key={cust.Phone}>
                 <td>{cust.Name}</td>
                 <td>{cust.Phone}</td>
-                <td>show</td>
+                <td>
+                  <button
+                    className="btn btn-primary"
+                    onClick={() => {
+                      showDetails(cust);
+                    }}
+                  >
+                    showDetail
+                  </button>
+                </td>
               </tr>
             );
           })}

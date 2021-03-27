@@ -3,9 +3,17 @@ import React from "react";
 function StatsItem(props) {
   const { count, text } = props;
   return (
-    <div>
-      <h1>{count}</h1>
-      <h3>{text} </h3>
+    <div className="col-md-4">
+      <div className="card bg-light">
+        <div className="card-header">
+          <h1>{count}</h1>
+        </div>
+        <div className="card-body">
+          <div className="card-title">
+            <h3>{text}</h3>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
